@@ -27,7 +27,7 @@ An e-commerce platform developed with Symfony 6, offering a responsive design an
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/sanjayrathod/symfony-test.git
+git clone https://github.com/meettech001/symfony-test
 ```
 
 2. Install dependencies:
@@ -79,7 +79,6 @@ php -d memory_limit=512M vendor/bin/phpstan analyse
 - Implemented RESTful API for future mobile app integration
 - Added image upload functionality for product management
 - Included comprehensive form validation
-- Implemented flash messages for better UX
 
 ## Author
 
