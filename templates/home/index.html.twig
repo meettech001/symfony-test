@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to Symfony Shop{% endblock %}
+
+{% block body %}
+<!-- Hero Section -->
+    <header class="jumbotron text-center my-4">
+        <h1 class="display-4">Welcome to Symfony Shop</h1>
+        <p class="lead">Discover the best products at unbeatable prices!</p>
+        <a href="/products" class="btn btn-primary btn-lg">Browse Products</a>
+        
+    </header>
+    <!-- Products Section -->
+    <div class="container mt-5">
+        <h1>Featured Products</h1>
+
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-3">
+                    <div class="card text-center mb-3">
+                        <a href="{{ path('app_product_detail', { id: product.id }) }}">
+                            <div class="card">
+                                <img src="{{ asset('uploads/images/'~ product.image) }}" class="card-img-top" alt="{{ product.title }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>  
+    </div>
+
+    <div class="container mt-5">
+        <h1>Categories</h1>
+
+        <div class="row">
+            {% for category in categories %}
+                <div class="col-md-3">
+                    <div class="card text-center mb-3">
+                        <a href="{{ path('app_category_products', { category: category.slug }) }}">
+                            <div class="card">
+                                <img src="{{ asset('images/categories/'~ category.name ~ '.jpg') }}" class="card-img-top" alt="{{ category.name }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ category.name }}</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>  
+    </div>
+</div>
+
+{% endblock %}

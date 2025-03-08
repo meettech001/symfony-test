@@ -1,0 +1,58 @@
+{{ form_start(form, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate'}}) }}
+
+    <div class="row">
+        <div class="col-md-12">
+            {{ form_label(form.title, 'Product Title', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.title) }}
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12">
+            {{ form_label(form.shortDescription, 'Short Description', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.shortDescription, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.shortDescription) }}
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-6">
+            {{ form_label(form.priceExclVat, 'Price (Excl. VAT)', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.priceExclVat, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.priceExclVat) }}
+        </div>
+        <div class="col-md-6">
+            {{ form_label(form.category, 'Category', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.category, {'attr': {'class': 'form-select'}}) }}
+            {{ form_errors(form.category) }}
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-6">
+               {{ form_label(form.imageFile) }}
+                {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.imageFile) }}
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-6">
+                {{ form_widget(form.isTop, {'attr': {'class': 'form-check-input'}}) }}
+                {{ form_label(form.isTop, 'Is Top Product?', {'label_attr': {'class': 'form-check-label'}}) }}
+                {{ form_errors(form.isTop) }}
+        </div>
+        <div class="col-md-6">
+                {{ form_widget(form.isFeatured, {'attr': {'class': 'form-check-input'}}) }}
+                {{ form_label(form.isFeatured, 'Is Featured?', {'label_attr': {'class': 'form-check-label'}}) }}
+                {{ form_errors(form.isFeatured) }}
+        </div>
+    </div>
+    
+
+    
+
+    <button type="submit" class="btn btn-success mt-3">{{ button_label|default('Save') }}</button>
+
+{{ form_end(form) }}

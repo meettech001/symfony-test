@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="my-4">Products List</h1>
+    <a href="{{ path('app_admin_product_new') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Product</a>
+
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>PriceExclVat</th>
+                    <th>Category</th>
+                    <th>IsTop</th>
+                    <th>IsFeatured</th>
+                    <th>CreatedAt</th>
+                    <th>UpdatedAt</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for product in pagination %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.title }}</td>
+                    <td>{{ product.priceExclVat }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.IsTop ? 'Yes' : 'No' }}</td>
+                    <td>{{ product.IsFeatured ? 'Yes' : 'No' }}</td>
+                    <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                        <a href="{{ path('app_admin_product_show', {'id': product.id}) }}" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                        <a href="{{ path('app_admin_product_edit', {'id': product.id}) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="11">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="pagination">
+                {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}

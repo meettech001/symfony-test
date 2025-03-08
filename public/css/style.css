@@ -1,0 +1,7 @@
+.truncate-text::after {
+    content: '...';
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
