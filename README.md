@@ -53,9 +53,9 @@ php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load
 ```
 
-7. Start the Symfony server:
+7. Open below url in browser
 ```bash
-symfony server:start
+(http://13.symfony-test.mit:8083)
 ```
 
 ## API Endpoints
