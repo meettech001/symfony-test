@@ -30,28 +30,30 @@ An e-commerce platform developed with Symfony 6, offering a responsive design an
 git clone https://github.com/meettech001/symfony-test
 ```
 
-2. Install dependencies:
+2. Go inside .docker folder and execute docker-compose build -d 
+
+3. Install dependencies inside docker
 ```bash
 composer install
 ```
 
-3. Configure your database in `.env`:
+4. Configure your database in `.env`:
 ```
 DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
 ```
 
-4. Create database and run migrations:
+5. Create database and run migrations:
 ```bash
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 ```
 
-5. Load fixtures (optional):
+6. Load fixtures (optional):
 ```bash
 php bin/console doctrine:fixtures:load
 ```
 
-6. Start the Symfony server:
+7. Start the Symfony server:
 ```bash
 symfony server:start
 ```
